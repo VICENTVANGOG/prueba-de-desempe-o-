@@ -16,7 +16,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: 'Token de acceso no encontrado' }, { status: 401 });
     }
 
-    const response = await fetch('http://http://192.168.88.39:7000///auth/checkout', {
+    const response = await fetch('https://api-coders-advanced-route-production.up.railway.app/auth/checkout', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${accessToken}`,

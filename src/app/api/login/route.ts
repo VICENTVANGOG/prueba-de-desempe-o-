@@ -8,7 +8,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: 'Faltan datos requeridos' }, { status: 400 });
     }
 
-    const response = await fetch('http://http://192.168.88.39:7000/auth/login', {
+    const response = await fetch('https://api-coders-advanced-route-production.up.railway.app/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
