@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '@/redux/store';
 import { FaShoppingCart } from 'react-icons/fa';
-import { removeItem } from '@/redux/cartSlice'; 
+import { removeItem, clearCart } from '@/redux/cartSlice'; 
 import { CartItem } from '@/redux/interfaces/CartItem'; 
 import Swal from 'sweetalert2'; 
 import './Cart.scss';
@@ -54,7 +54,8 @@ const Cart: React.FC = () => {
           icon: 'success',
           confirmButtonText: 'OK'
         });
-        localStorage.removeItem('persist:root');
+        localStorage.removeItem('persist:root'); 
+        dispatch(clearCart()); 
       }
     } catch (error) {
       console.error('Error en el checkout:', error);
