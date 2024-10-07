@@ -12,7 +12,7 @@ export async function POST(req: Request, { params }: { params: { productId: stri
       return NextResponse.json({ message: 'Token no encontrado' }, { status: 401 });
     }
 
-    const response = await fetch(`http://api-coders-advanced-route-production.up.railway.app/auth/products/${productId}/like`, {
+    const response = await fetch(`http://http://192.168.88.39:7000/auth/products/${productId}/like`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
@@ -46,7 +46,7 @@ export async function DELETE(req: Request, { params }: { params: { productId: st
       return NextResponse.json({ message: 'Token no encontrado' }, { status: 401 });
     }
 
-    const response = await fetch(`http://api-coders-advanced-route-production.up.railway.app/:7000/auth/products/${productId}/like`, {
+    const response = await fetch(`http://http://192.168.88.39:7000/:7000/auth/products/${productId}/like`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`,
