@@ -7,7 +7,6 @@ import CustomButton from '../ui/button/Button';
 
 import { LoginCredentials } from '@/interfaces/LoginCredentials'; 
 import { I18nContext } from '@/app/I18nProvider';
-import { signIn } from "next-auth/react";
 
 interface LoginFormProps {
   onSwitchToRegister: () => void; 
