@@ -54,6 +54,7 @@ const Cart: React.FC = () => {
           icon: 'success',
           confirmButtonText: 'OK'
         });
+        localStorage.removeItem('persist:root');
       }
     } catch (error) {
       console.error('Error en el checkout:', error);
