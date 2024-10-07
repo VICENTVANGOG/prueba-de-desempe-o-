@@ -95,6 +95,7 @@ const Product: React.FC<{ selectedCategory: string }> = ({ selectedCategory }) =
                 <FaShoppingCart size={20} />
                 {t('addToCart')}
               </button>
+              
             </div>
           </div>
           <div className="product-info">

@@ -4,23 +4,28 @@ import { RootState } from '@/redux/store';
 import { FaShoppingCart } from 'react-icons/fa';
 import { removeItem } from '@/redux/cartSlice'; 
 import { CartItem } from '@/redux/interfaces/CartItem'; 
+import Swal from 'sweetalert2'; 
 import './Cart.scss';
 
 const Cart: React.FC = () => {
   const items = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [message, setMessage] = useState(''); 
 
   const toggleModal = () => {
     setIsModalOpen(prev => !prev);
-    setMessage(''); 
   };
 
   const totalPrice = items.reduce((total, item: CartItem) => total + (item.price * item.quantity), 0);
 
   const handleRemoveItem = (id: number) => {
     dispatch(removeItem(id)); 
+    Swal.fire({
+      title: 'Item Removed',
+      text: 'The item has been removed from your cart.',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
   };
 
   const handleCheckout = async () => {
@@ -36,13 +41,28 @@ const Cart: React.FC = () => {
       const data = await response.json();
 
       if (!response.ok) {
-        setMessage(data.message || 'Error en el checkout');
+        Swal.fire({
+          title: 'Checkout Error',
+          text: data.message || 'Error en el checkout',
+          icon: 'error',
+          confirmButtonText: 'OK'
+        });
       } else {
-        setMessage(data.message || 'Checkout exitoso');
+        Swal.fire({
+          title: 'Checkout Successful',
+          text: data.message || 'Checkout exitoso',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
       }
     } catch (error) {
       console.error('Error en el checkout:', error);
-      setMessage('Error en el checkout, por favor intenta de nuevo.');
+      Swal.fire({
+        title: 'Checkout Error',
+        text: 'Error en el checkout, por favor intenta de nuevo.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
     }
   };
 
@@ -74,9 +94,11 @@ const Cart: React.FC = () => {
             <p>Your cart is empty</p>
           )}
         </div>
+        
         <div className="total">Total: ${totalPrice.toFixed(2)}</div>
-        <button className="checkout-button" onClick={handleCheckout}>Checkout</button>
-        {message && <p className="checkout-message">{message}</p>} 
+        <div className="delete">
+          <button onClick={handleCheckout}>Checkout</button>
+        </div>
       </div>
     </>
   );

@@ -4,10 +4,10 @@ import CustomInput from '@/components/ui/input/input';
 import CustomLabel from '@/components/ui/label/label';
 import './LoginForm.scss';
 import CustomButton from '../ui/button/Button';
-import Cookies from 'js-cookie'; 
+
 import { LoginCredentials } from '@/interfaces/LoginCredentials'; 
 import { I18nContext } from '@/app/I18nProvider';
-import { signIn, useSession, signOut } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 interface LoginFormProps {
   onSwitchToRegister: () => void; 
