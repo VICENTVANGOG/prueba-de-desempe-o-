@@ -1,0 +1,148 @@
+.cart {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: blue;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darkblue;
+  }
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1001;
+  padding: 20px;
+  color: black;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .close-button {
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .cart-items {
+    flex: 1; 
+    max-height: 500px;  
+    overflow-y: auto;   
+    margin-bottom: 30px;
+
+    &::-webkit-scrollbar {
+      width: 8px; 
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2); 
+      border-radius: 10px; 
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.1); 
+      border-radius: 10px; 
+    }
+
+    scrollbar-width: thin; 
+    scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.1); 
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      p {
+        margin: 0;
+        font-size: 16px;
+        flex: 5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+
+  
+  .delete {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 2rem;
+    
+    button {
+      background-color: #6366f1; 
+      border: none;
+      border-radius: 8px; 
+      padding: 10px 15px; 
+      cursor: pointer;
+      font-size: 16px;
+      color: white;
+      transition: background-color 0.3s, box-shadow 0.3s; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  
+      &:hover {
+        background-color: #4f46e5;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); 
+      }
+  
+      &:active {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transform: translateY(2px); 
+      }
+    }
+  }
+  
+
+  
+  }
+
+  .empty-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+  }
+
+  .total {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    margin-top: auto;
+  }
+
+

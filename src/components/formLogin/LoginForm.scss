@@ -1,0 +1,112 @@
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-color: #A47EFF; 
+
+  .login-form-wrapper {
+    width: 40%;
+    margin-left: auto;
+    background-color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2rem;
+
+      .logo {
+        max-width: 200px;
+        height: auto;
+      }
+    }
+
+    .form-subtitle {
+      font-size: 1.2rem;
+      color: #000000;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .sign-in-button {
+      background-color: #D18FFF; 
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      margin-top: 3%;
+
+      &:hover {
+        background-color: #B475FF; 
+      }
+    }
+
+    .form-footer {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #000000;
+
+      a {
+        color: #5052d1;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .illustration-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-container {
+      max-width: 90%;
+      height: auto;
+
+      .dev-image {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+
+.language-selector {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute; 
+  top: 20px; 
+  right: 20px; 
+
+  .flag-icon {
+    width: 30px; 
+    height: auto;
+    margin-left: 10px; 
+    cursor: pointer; 
+    transition: transform 0.2s; 
+
+    &:hover {
+      transform: scale(1.1); 
+    }
+  }
+}
