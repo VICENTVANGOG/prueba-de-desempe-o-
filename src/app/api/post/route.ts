@@ -12,7 +12,7 @@ export async function GET() {
     }
 
     try {
-        const response = await fetch('http://192.168.88.39:7000/auth/products', {
+        const response = await fetch('http://api-coders-advanced-route-production.up.railway.app/:7000/auth/products', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,

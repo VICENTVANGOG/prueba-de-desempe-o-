@@ -95,18 +95,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
         
         <CustomForm title={t("login.title")} onSubmit={handleSubmit}>
           <p className="form-subtitle">{t("login.subtitle")}</p>
-          
-          <button
-            onClick={() => signIn('google')}
-            className="google-signin-button"
-          >
-            <img 
-              src="" 
-              alt="Sign in with Google" 
-              className="google-logo"
-            />
-          </button>
-
+        
           <CustomLabel text={t("login.username")} htmlFor="username" />
           <CustomInput
             type="text"
