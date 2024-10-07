@@ -17,7 +17,7 @@ export async function POST(req: Request) {
 
     console.log('Credenciales a enviar:', credentials);
 
-    const response = await fetch('http://api-coders-advanced-route-production.up.railway.app/:7000/auth/signup', {
+    const response = await fetch('http://api-coders-advanced-route-production.up.railway.app/auth/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(credentials),

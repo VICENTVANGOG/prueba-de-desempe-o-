@@ -12,7 +12,7 @@ export async function POST(req: Request, { params }: { params: { productId: stri
       return NextResponse.json({ message: 'Token no encontrado' }, { status: 401 });
     }
 
-    const response = await fetch(`http://api-coders-advanced-route-production.up.railway.app/:7000/auth/products/${productId}/like`, {
+    const response = await fetch(`http://api-coders-advanced-route-production.up.railway.app/auth/products/${productId}/like`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
